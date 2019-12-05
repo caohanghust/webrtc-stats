@@ -1,5 +1,5 @@
 {
-  "name": "webrtc-stats",
+  "name": "webrtc-stat",
   "version": "0.0.1",
   "description": "show webrtc connect stats with graphics.",
   "main": "dist/index.js",
