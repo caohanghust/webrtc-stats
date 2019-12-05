@@ -1,12 +1,9 @@
-// import { Detector } from './stat'
-
 import { Detector, Stat } from './stat';
 
 const enum ERenderType {
     Fps,
     Bitrate
 }
-
 const enum EColor {
     Fps = 'rgb(59, 184, 215)',
     Bitrate = `rgb(8, 255, 200)`
