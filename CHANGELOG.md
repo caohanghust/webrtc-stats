@@ -1,3 +1,14 @@
+## 0.0.3 (2019-12-05)
+
+
+### Bug Fixes
+
+* **index:** remove webrtc-adapter ([3135f26](https://github.com/caohanghust/webrtc-stats/commit/3135f2675263b8248034ccfec006855ab892a310))
+
+### Features
+* **renderer:** renderer.fromPeerConnection ([0ff8d48](https://github.com/caohanghust/webrtc-stats/commit/0ff8d48caa2b8a8ebeffcc9cb95756a8199c3b2b))
+
+
 ## 0.0.2 (2019-12-05)
 
 ### Bug Fixes
