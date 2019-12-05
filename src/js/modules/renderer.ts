@@ -4,6 +4,7 @@ const enum ERenderType {
     Fps,
     Bitrate
 }
+
 const enum EColor {
     Fps = 'rgb(59, 184, 215)',
     Bitrate = `rgb(8, 255, 200)`
@@ -96,17 +97,22 @@ export class Renderer {
         }, 5000);
     }
 
+    public setSize (scale: number): void {
+        const { root } = this;
+        root.style.transform = `scale(${ scale })`;
+    }
+
     public listen (detector: Detector): void {
         this.detector = detector;
         detector.on('update', this.update);
     }
 
-    public reset () {
+    public reset (): void {
         this.detector.off('update', this.update);
         this.detector = undefined;
     }
 
-    private initData () {
+    private initData (): void {
         const dataLength = 51;
         this.framerates = new Array(dataLength).fill(0);
         this.bitrates = new Array(dataLength).fill(0);
