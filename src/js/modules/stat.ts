@@ -30,7 +30,19 @@ export class Detector extends Subscribe {
     }
 }
 
-class Stat {
+export class Stat {
+    public static formatBytes (bytes: number) {
+        let size = bytes;
+        let receivedBytesMeasurement = 'B';
+        const dataMeasurements = [ 'kB', 'MB', 'GB' ];
+        for (let index = 0, len = dataMeasurements.length; index < len; index++) {
+            if (size < 1000) break;
+            size = size / 1000;
+            receivedBytesMeasurement = dataMeasurements[ index ];
+        }
+        return `${ size.toFixed(1) }${ receivedBytesMeasurement }`;
+    }
+
     public timestamp: number;
     public timestampStart: number;
     public packetsLost: number;
@@ -106,15 +118,4 @@ class Stat {
         }
     }
 
-    private formatBytes (bytes) {
-        let size = bytes;
-        let receivedBytesMeasurement = 'B';
-        const dataMeasurements = [ 'kB', 'MB', 'GB' ];
-        for (let index = 0, len = dataMeasurements.length; index < len; index++) {
-            if (size < 1000) break;
-            size = size / 1000;
-            receivedBytesMeasurement = dataMeasurements[ index ];
-        }
-        return `${ size.toFixed(1) }${ receivedBytesMeasurement }`;
-    }
 }

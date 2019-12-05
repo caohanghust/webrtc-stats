@@ -3,6 +3,8 @@ const callButton = document.getElementById('call-btn')
 const localVideo = document.getElementById('local-video')
 const remoteVideo = document.getElementById('remote-video')
 
+const renderer = new Renderer()
+
 startButton.addEventListener('click', start)
 callButton.addEventListener('click', call)
 
@@ -67,9 +69,7 @@ async function call () {
   pc2.addEventListener('track', gotRemoteStream)
 
   const detector = new window.Detector()
-  detector.on('update', e => {
-    console.log(e)
-  })
+  renderer.listen(detector)
   detector.start(pc2, 1000)
 
   localStream.getTracks().forEach(track => pc1.addTrack(track, localStream))
