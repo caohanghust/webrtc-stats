@@ -38,7 +38,7 @@ async function start () {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true })
     console.log('Received local stream')
-    // localVideo.srcObject = stream
+    localVideo.srcObject = stream
     localStream = stream
   } catch (e) {
     alert(`getUserMedia() error: ${ e.name }`)
@@ -132,7 +132,7 @@ function onSetSessionDescriptionError (error) {
 
 function gotRemoteStream (e) {
   if (remoteVideo.srcObject !== e.streams[ 0 ]) {
-    // remoteVideo.srcObject = e.streams[ 0 ]
+    remoteVideo.srcObject = e.streams[ 0 ]
     console.log('pc2 received remote stream')
   }
 }

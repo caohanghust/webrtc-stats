@@ -127,7 +127,7 @@ export class Renderer {
     private renderSpeed (stat: Stat): void {
         const { bitrates } = this;
         const { current } = stat.bitrate;
-        const text = `${ Stat.formatBytes(current).toUpperCase() }/s`;
+        const text = `${ Stat.formatBytes(current / 8 * 1000).toUpperCase() }/s`;
         this.drawAreaChar(bitrates, EColor.Bitrate);
         this.renderText(text, EColor.Bitrate);
     }
