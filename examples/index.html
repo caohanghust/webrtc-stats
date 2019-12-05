@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webrtc Demo</title>
+    <style>
+        html,body,.container {
+            height: 100%;
+        }
+        .container {
+            width: 980px;
+            margin: auto;
+            text-align: center;
+        }
+        video {
+            display: inline-block;
+            width: 400px;
+            height: 400px;
+            margin: 40px;
+            border: 1px solid #999;
+        }
+        .btn {
+            display: inline-block;
+            width: 80px;
+            line-height: 40px;
+            font-size: 20px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <video id="local-video" playsinline autoplay muted></video>
+    <video id="remote-video" playsinline autoplay></video>
+    <div id="start-btn" class="btn">start</div>
+    <div id="call-btn" class="btn">call</div>
+</div>
+<script src="../dist/index.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

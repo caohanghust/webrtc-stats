@@ -23,13 +23,14 @@
   },
   "homepage": "https://github.com/caohanghust/webrtc-stats#readme",
   "devDependencies": {
+    "@types/lodash": "^4.14.138",
+    "@types/node": "^12.7.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.2.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "@types/lodash": "^4.14.138",
-    "@types/node": "^12.7.3",
-    "source-map-loader": "^0.2.4"
+    "webrtc-adapter": "^7.3.0"
   }
 }
