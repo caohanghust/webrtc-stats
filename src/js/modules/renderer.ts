@@ -13,6 +13,14 @@ const enum EColor {
 }
 
 export class Renderer {
+    public static fromPeerConnection (pc: RTCPeerConnection, interval: number) {
+        const detector = new Detector();
+        const renderer = new Renderer();
+        renderer.listen(detector);
+        detector.start(pc, interval);
+        return renderer;
+    }
+
     public static generateDom (): HTMLDivElement {
         const dom = document.createElement('div');
         dom.style.cssText = `
