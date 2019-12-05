@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "sourceMap": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/"
+      ],
+      "@utils/*": [
+        "src/js/utils/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "node/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
