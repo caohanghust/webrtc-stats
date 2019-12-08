@@ -4,7 +4,7 @@ webrtc-stats
 #### Webrtc tools  ####
 show webrtc connect stats with graphics
 
-<img src="./docs/fps.png">　　<img src="./docs/speed.png">
+<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/fps.png">　　<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/speed.png">
 
 #### Install ####
 ```bash
