@@ -22,3 +22,9 @@ export interface IStatFramerate {
     low: number,
     high: number
 }
+export interface ICandidate {
+    ip: string,
+    port: number,
+    protocol: string,
+    type: string,
+}

@@ -6,6 +6,8 @@ show webrtc connect stats with graphics
 
 <img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/fps.png">　　<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/speed.png">
 
+<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/table.png">
+
 #### Install ####
 ```bash
     npm install webrtc-stat

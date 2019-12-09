@@ -1,4 +1,4 @@
-import { IStatBitrate, IStatBytes, IStatFrame, IStatFramerate } from '../interface';
+import { ICandidate, IStatBitrate, IStatBytes, IStatFrame, IStatFramerate } from '../interface';
 import Subscribe from '@utils/subscribe';
 
 export class Detector extends Subscribe {
@@ -51,6 +51,7 @@ export class Stat {
     public bytes: IStatBytes;
     public bitrate: IStatBitrate;
     public framerate: IStatFramerate;
+    public candidate: ICandidate;
 
     public constructor () {
         this.timestamp = 0;
@@ -90,6 +91,14 @@ export class Stat {
                     width: frameWidth,
                     height: frameHeight,
                     decodedStart: this.frame.decodedStart || framesDecoded,
+                };
+            }
+            if (type === 'remote-candidate') {
+                this.candidate = {
+                    ip: rawStat.ip,
+                    port: rawStat.port,
+                    protocol: rawStat.protocol,
+                    type: rawStat.candidateType
                 };
             }
         });

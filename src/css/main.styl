@@ -1,0 +1,54 @@
+.webrtc-stat-root
+  position fixed
+  background rgba(0, 0, 0, .7)
+  font-size 12px
+  &[show-type="icon"]
+    width 100px
+    height 100px
+    top 50px
+    right 50px
+    .webrtc-stat-canvas
+      display block
+    .webrtc-stat-text
+      display block
+    .webrtc-stat-table
+      display none
+  &[show-type="table"]
+    top 50px
+    width 300px
+    height auto
+    left 0
+    right 0
+    margin auto
+    background rgba(0, 0, 0, .3)
+    display inline-block
+    .webrtc-stat-table
+      display table
+      margin auto
+      .title
+        text-align center
+      th,td
+        text-align left
+
+    .webrtc-stat-canvas
+      display none
+    .webrtc-stat-text
+      display none
+
+  .webrtc-stat-canvas
+    position absolute
+    width 100%
+    height 70px
+    bottom 0
+    left 0
+  .webrtc-stat-text
+    position absolute
+    width 100%
+    height 30px
+    line-height 30px
+    font-size 12px
+    top 0
+    left 0
+    background rgba(4, 18, 169, .5)
+    color rgba(59, 184, 215, 1)
+
