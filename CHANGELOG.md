@@ -1,3 +1,11 @@
+## 0.0.5 (2019-12-09)
+
+### Features
+
+* **renderer:** show more detail when you click the icon ([cf6acde](https://github.com/caohanghust/webrtc-stats/commit/cf6acde6bf2a7c81a90a65e479cede4258751df4))
+
+
+
 ## 0.0.3 (2019-12-05)
 
 
