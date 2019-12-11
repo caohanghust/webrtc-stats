@@ -1,5 +1,6 @@
 import { Detector, Stat } from './stat';
 import '../../css/main.styl';
+import { getScale } from '@utils/viewport';
 
 const enum EIconType {
     Fps,
@@ -42,8 +43,10 @@ export class Renderer {
     }
 
     public static generateDom (): HTMLDivElement {
+        const scale = getScale();
         const dom = document.createElement('div');
         dom.classList.add('webrtc-stat-root');
+        dom.style.fontSize = `${ 12 * scale }px`;
         return dom;
     }
 
@@ -140,8 +143,7 @@ export class Renderer {
         root.addEventListener('click', () => {
             if (this.showType === EShowType.Icon) {
                 this.setShowType(EShowType.Table);
-            }
-            else if (this.showType === EShowType.Table) {
+            } else if (this.showType === EShowType.Table) {
                 this.setShowType(EShowType.Icon);
             }
         });
