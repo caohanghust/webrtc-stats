@@ -13,7 +13,11 @@ export default class Subscribe {
 
     public hasListener (name: string): boolean {
         const { events } = this;
-        return !!(events && events[ name ] && events[ name ].length > 0);
+        return (
+            !!events &&
+            !!events[ name ] &&
+            events[ name ].length > 0
+        );
     }
 
     public on (names: string | string[], callback: SubscribeCallback, context?: object, once = false): () => Subscribe {
