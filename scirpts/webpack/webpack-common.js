@@ -23,7 +23,7 @@ module.exports = {
         test: /\.png$/, use: [ {
           loader: 'url-loader',
           options: {
-            limit: 500000,   //表示低于50000字节（50K）的图片会以 base64编码
+            limit: 500000,   // 表示低于50000字节（50K）的图片会以 base64编码
           },
         } ],
       },

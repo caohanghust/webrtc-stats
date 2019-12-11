@@ -15,5 +15,6 @@ module.exports = {
   globals: {},
   rules: {
     'max-params': [ 1, 3 ],
+    '@typescript-eslint/no-require-imports': 1
   },
 }
