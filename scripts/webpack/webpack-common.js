@@ -1,5 +1,8 @@
 const path = require('path')
 const ROOT_DIR = process.cwd()
+const LOADER_DIR = path.resolve(ROOT_DIR, './scripts/loaders')
+const cssMinifyLoader = path.resolve(LOADER_DIR, './css-minify-loader.js')
+const ejsLoader = path.resolve(LOADER_DIR, './ejs-loader.js')
 module.exports = {
   entry: {
     index: path.resolve(ROOT_DIR, './src/js/index.ts'),
@@ -30,7 +33,11 @@ module.exports = {
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       { test: /\.frag|\.vert|\.glsl$/, use: 'raw-loader' },
       { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
-      { test: /\.styl$/, use: [ 'style-loader', 'css-loader', 'stylus-loader' ] },
+      { test: /\.ejs$/, use: { loader: ejsLoader}  },
+      {
+        test: /\.styl$/,
+        use: [ 'style-loader', 'css-loader', { loader: cssMinifyLoader }, 'stylus-loader' ],
+      },
       { test: /\.less$/, use: [ 'style-loader', 'css-loader', 'less-loader' ] },
     ],
   },
