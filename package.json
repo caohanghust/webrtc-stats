@@ -1,12 +1,12 @@
 {
   "name": "webrtc-stat",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "show webrtc connect stats with graphics.",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --config scripts/webpack/webpack-production.js",
     "dev": "webpack -w --config scripts/webpack/webpack-dev.js",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -p",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

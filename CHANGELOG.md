@@ -1,3 +1,11 @@
+# 0.1.0 (2019-12-12)
+
+
+### Features
+
+* **renderer:** dpr scale ([40b0792](https://github.com/caohanghust/webrtc-stats/commit/40b07923982ac29ca71b3a1e2c67b6b5c14861db))
+
+
 ## 0.0.5 (2019-12-09)
 
 ### Features
