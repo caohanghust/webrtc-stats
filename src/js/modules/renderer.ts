@@ -17,6 +17,11 @@ export const enum EShowType {
     Table = 'table'
 }
 
+interface IChartEdge {
+    max?: number,
+    min?: number
+}
+
 export class Renderer {
     public static fromPeerConnection (pc: RTCPeerConnection, interval: number) {
         const detector = new Detector();
@@ -213,7 +218,7 @@ export class Renderer {
         const { bitrates } = this;
         const { current } = stat.bitrate;
         const text = `${ Stat.formatBytes(current / 8 * 1000).toUpperCase() }/s`;
-        this.drawAreaChar(bitrates, EColor.Bitrate);
+        this.drawAreaChart(bitrates, EColor.Bitrate, { min: 0 });
         this.renderText(text, EColor.Bitrate);
     }
 
@@ -221,7 +226,7 @@ export class Renderer {
         const { framerates } = this;
         const { current, high, low } = stat.framerate;
         const text = `${ ~~current }FPS(${ low }-${ high })`;
-        this.drawAreaChar(framerates, EColor.Fps);
+        this.drawAreaChart(framerates, EColor.Fps, { min: 0 });
         this.renderText(text, EColor.Fps);
     }
 
@@ -230,14 +235,14 @@ export class Renderer {
         this.textNode.style.color = color;
     }
 
-    private drawAreaChar (data: number[], color: string, max?: number, min?: number): void {
+    private drawAreaChart (data: number[], color: string, edge?: IChartEdge): void {
         const { ctx, canvas } = this;
         const { width, height } = canvas;
-        const edge = {
-            max: max ? max : Math.max(...data),
-            min: min ? min : Math.min(...data),
-        };
-        const calHeight = num => ~~(height - (num - edge.min) / (edge.max - edge.min) * height * .8);
+        const {
+            max = Math.max(...data),
+            min = Math.min(...data)
+        } = edge;
+        const calHeight = num => ~~(height - (num - min) / (max - min) * height * .8);
         const wStep = width / (data.length - 1);
 
         ctx.clearRect(0, 0, width, height);
