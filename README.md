@@ -4,9 +4,9 @@ webrtc-stats
 #### Webrtc tools  ####
 show webrtc connect stats with graphics
 
-<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/fps.png">　　<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/speed.png">
+<img src="https://pic.downk.cc/item/5e68b803e83c3a1e3a79b0c2.png">　　<img src="https://pic.downk.cc/item/5e68b81ce83c3a1e3a79bf00.png">
 
-<img src="https://raw.githubusercontent.com/caohanghust/webrtc-stats/master/docs/table.png">
+<img src="https://pic.downk.cc/item/5e68b81ce83c3a1e3a79bf04.png">
 
 #### Install ####
 ```bash
